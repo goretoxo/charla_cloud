@@ -3,8 +3,8 @@
   name: configuration play
   become: true
   gather_facts: true
-  vars_files:
-    - comunes.yml
+#  vars_files:
+#    - comunes.yml
 
   user: "{{ ami_user }}"
   tasks:

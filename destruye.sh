@@ -13,4 +13,5 @@ if [ "$1" == "azure" ]
 fi
 
 
-terraform destroy $1
+terraform destroy -state=$1/estado.tfstate $1
+

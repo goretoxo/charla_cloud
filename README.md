@@ -70,7 +70,11 @@ terraform destroy
 
    - autenticando en azure con terraform
 	https://geekdudes.files.wordpress.com/2018/01/get_secret1.png?w=614
+https://geekdudes.wordpress.com/2018/01/22/configuring-terraform-for-azure/
+https://www.terraform.io/docs/providers/azurerm/index.html
 
+documentacion de terraform para crear maquina
+https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html
 
 
 

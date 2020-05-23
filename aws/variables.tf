@@ -11,7 +11,7 @@ variable "home_ip" {
 }
 
 variable "numero_de_instancias" {
-  default = 1
+  default = 2
 }
 
 # PARAMETROS QUE DEPENDEN DE LA AMI USADA, para eu-west-1
@@ -52,7 +52,3 @@ variable "aws_tag_name" {
   default = "pruebas_terraform"
 }
 
-provider "aws" {
-  region 			= var.aws_region
-  shared_credentials_file 	= "/home/pedro/.aws/credentials"
-}

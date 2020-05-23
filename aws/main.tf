@@ -27,10 +27,19 @@ resource "aws_instance" "vm_terraform"  {
 
 # generate inventory file for Ansible
 resource "local_file" "inventario" {
-  content = templatefile("template_inventario.tpl",
+  content = templatefile("aws/template_inventario.tpl",
     {
       vm_terraform = aws_instance.vm_terraform.*.public_ip
     }
   )
-  filename = "inventario"
+  filename = "aws/inventario"
+}
+# generate ssh script
+resource "local_file" "ssh_script" {
+  content = templatefile("aws/template_ssh.tpl",
+    {
+      vm_terraform = aws_instance.vm_terraform.*.public_ip
+    }
+  )
+  filename = "aws/ssh.sh"
 }
