@@ -1,0 +1,13 @@
+# PARAMETROS QUE DEPENDEN DE LA AMI USADA, 
+# LINUX AMI2
+ami_user: "ec2-user"
+# CentOS 7 oficial
+#ami_user: "centos"
+# ubuntu 18.04
+#ami_user: "ubuntu"
+# RHEL 7.4
+#ami_user: ec2-user
+# RHEL no funciona en maquinas mas pequenhas que t2.micro
+# RHEL 7.6
+#ami_user: ec2-user
+
