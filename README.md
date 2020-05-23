@@ -66,6 +66,12 @@ terraform destroy
  - ansible como herramienta universal
 (mis ejemplos de despliegue)
 
+ -ansible Y terraform
+
+   - autenticando en azure con terraform
+	https://geekdudes.files.wordpress.com/2018/01/get_secret1.png?w=614
+
+
 
 
 - el proceso de alta en azure y en aws

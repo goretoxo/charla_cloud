@@ -1,2 +1,5 @@
 .terraform
 key_test20190227
+.terraform.tfstate.lock.info
+terraform.tfstate
+terraform.tfstate.backup
