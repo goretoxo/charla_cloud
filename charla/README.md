@@ -1,6 +1,6 @@
 TO-DO:
-- git repo
-- seguir con las pruebas
+x - git repo
+x - seguir con las pruebas
 ## cloud facil pa ti
 
 # cloud es un ordenador de otra persona
@@ -68,10 +68,15 @@ terraform destroy
 
  -ansible Y terraform
 
-   - autenticando en azure con terraform
+   - autenticando en azure y aws con terraform
 	https://geekdudes.files.wordpress.com/2018/01/get_secret1.png?w=614
 https://geekdudes.wordpress.com/2018/01/22/configuring-terraform-for-azure/
 https://www.terraform.io/docs/providers/azurerm/index.html
+```
+    source /home/pedro/trabajo/llaves/azure/credentials
+    cat /home/pedro/.aws/credentials
+```
+
 
 documentacion de terraform para crear maquina
 https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html
@@ -83,6 +88,7 @@ https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html
 
 - cloud frente a VPS frente a Hetzner
  - costes y objetivos
+
  - el caso de foro.hacklabalmeria
 https://www.hetzner.com/sb
  - mix & mix

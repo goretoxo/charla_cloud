@@ -1,18 +1,22 @@
+############
+# variables que es mas probable que cambies
+############
+
+variable "numero_de_instancias" {
+  default = 1
+}
+
 variable "aws_region" {
   default = "eu-west-1"
 }
 
-variable "aws_vpc_id" {
-  default ="vpc-64dd2c0f"
+# 1 vcpu; 0,5Gb - t2.nano
+# 2 vcpu; 05Gb  - t3.nano
+# 2 vcpu; 4Gb   - t3.medium
+variable "aws_instance_type" {
+  default ="t3.medium"
 }
 
-variable "home_ip" {
-  default ="47.61.240.105/32"
-}
-
-variable "numero_de_instancias" {
-  default = 2
-}
 
 # PARAMETROS QUE DEPENDEN DE LA AMI USADA, para eu-west-1
 # LINUX AMI2
@@ -33,19 +37,33 @@ variable "numero_de_instancias" {
 #aws_image: "ami-0202869bdd0fc8c75"
 #ami_user: ec2-user
 # RHEL no funciona en maquinas mas pequenhas que t2.micro
+
 variable "aws_image" {
   default ="ami-0838da7c1467f590c"
 }
-
-# 1 vcpu; 0,5Gb - t2.nano
-# 2 vcpu; 05Gb  - t3.nano
-# 2 vcpu; 4Gb   - t3.medium
-variable "aws_instance_type" {
-  default ="t3.medium"
+variable "ami_user" {
+  default ="ec2-user"
 }
 
 variable "aws_key_name" {
   default ="test20190227"
+}
+
+variable "homeip" {
+  default ="0.0.0.0/0"
+}
+
+
+############
+# variables que no hace falta cambiar
+############
+
+variable "aws_net_cidr" {
+  default = "192.168.0.0/16"
+}
+
+variable "aws_subnet_cidr" {
+  default = "192.168.77.0/24"
 }
 
 variable "aws_tag_name" {

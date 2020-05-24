@@ -5,3 +5,5 @@ key_test20190227
 *.tfstate.backup
 *.lock.info
 ssh.sh
+charla/*/*
+charla/*.js

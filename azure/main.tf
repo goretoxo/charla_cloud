@@ -52,13 +52,13 @@ resource "azurerm_network_security_group" "sg_terraform" {
     protocol                   = "Tcp"
     source_port_range	       = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "*"
+    source_address_prefix      = var.homeip
     destination_address_prefix = "*"
   }
 }
 
 resource "azurerm_network_interface_security_group_association" "asoc_terraform" {
-  count 		    = 2
+  count 		    = var.numero_de_instancias
   network_interface_id      = azurerm_network_interface.nic_terraform[count.index].id
   network_security_group_id = azurerm_network_security_group.sg_terraform.id
 }
@@ -106,6 +106,7 @@ resource "local_file" "inventario" {
   content = templatefile("azure/template_inventario.tpl",
     {
       vm_terraform = azurerm_public_ip.public_ip_terraform.*.ip_address
+      ami_user          = var.az_vm_user
     }
   )
   filename = "azure/inventario"
@@ -116,6 +117,7 @@ resource "local_file" "ssh_logon" {
   content = templatefile("azure/template_ssh.tpl",
     {
       vm_terraform = azurerm_public_ip.public_ip_terraform.*.ip_address
+      ami_user          = var.az_vm_user
     }
   )
   filename = "azure/ssh.sh"

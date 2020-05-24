@@ -18,11 +18,19 @@ if [ "$1" == "azure" ]
     source /home/pedro/trabajo/llaves/azure/credentials
 fi
 
+# el valor de la ip local, para autorizar desde los grupos de seguridad
+export TF_VAR_homeip="$(curl -s ifconfig.io)/32"
+
+# lanzamos el PLAN
 terraform plan -state=$1/estado.tfstate $1
 
+# lanzamos la creacion
 terraform apply -state=$1/estado.tfstate $1
-
 
 sleep 20
 
-ansible-playbook -i $1/inventario crea.yml
+# personalizamos las maquinas
+ansible-playbook -i $1/inventario configura.yml
+
+# conectamos con las maquinas
+./$1/ssh.sh

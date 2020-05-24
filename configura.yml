@@ -1,0 +1,92 @@
+---
+- hosts: host_terraform
+  name: configuration play
+  become: true
+  gather_facts: true
+#  vars_files:
+#    - comunes.yml
+
+  user: "{{ ami_user }}"
+  tasks:
+    - name: just ping
+      ping:
+
+
+    - name: install epel repo
+      yum:
+        name: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        state: present
+    - name: install remi repo
+      yum:
+        name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+        state: present
+
+    - name: install power tools
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - createrepo
+        - wget
+        - htop
+        - tmux
+        - sysstat
+        - tcpdump
+        - dstat
+        - lsof
+        - iperf
+        - iftop
+        - mtr
+        - net-tools
+        - glances
+        - python-pip
+        - httrack
+        - tree
+        - git
+
+    - name: install apps
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - mariadb-server
+        - mariadb
+        - httpd
+        - php74-php
+        - php74-php-mysql
+        - php74-php-fpm
+        - haproxy
+        - varnish
+
+    - name: start sql server
+      service:
+        name: "{{ item }}"
+        state: restarted
+      with_items:
+        - mariadb
+
+    - name: crear la base de datos
+      command: mysql -e "CREATE DATABASE IF NOT EXISTS aplicacion"
+
+    - name: crear usuario de la base de datos
+      command: mysql -e "GRANT ALL ON aplicacion.* to 'usuario'@'localhost' identified by '123456'"
+
+    - name: limpieza de httpd conf
+      file:
+        path: "/etc/httpd/conf.d/{{ item }}"
+        state: absent
+      with_items:
+        - userdir.conf
+        - welcome.conf
+
+    - name: start all servers
+      service:
+        name: "{{ item }}"
+        state: restarted
+      with_items:
+        - varnish
+        - httpd
+        - haproxy
+        - varnishncsa
+        - rsyslog
+
