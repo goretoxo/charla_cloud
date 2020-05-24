@@ -73,8 +73,8 @@ terraform destroy
 https://geekdudes.wordpress.com/2018/01/22/configuring-terraform-for-azure/
 https://www.terraform.io/docs/providers/azurerm/index.html
 ```
-    source /home/pedro/trabajo/llaves/azure/credentials
-    cat /home/pedro/.aws/credentials
+    source ~/trabajo/llaves/azure/credentials
+    cat ~/.aws/credentials
 ```
 
 

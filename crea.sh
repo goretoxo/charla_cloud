@@ -15,12 +15,12 @@ fi
 
 if [ "$1" == "azure" ]
   then
-    source /home/pedro/trabajo/llaves/azure/credentials
+    source ~/trabajo/llaves/azure/credentials
 fi
 
 if [ "$1" == "hetzner" ]
   then
-    source /home/pedro/trabajo/llaves/credentials_hetzner
+    source ~/trabajo/llaves/credentials_hetzner
 fi
 
 
