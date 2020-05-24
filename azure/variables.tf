@@ -12,7 +12,7 @@ variable "az_location" {
 
 # 1 vcpu; 1Gb - Standard_B1s
 # 2 vcpu; 4Gb - Standard_B2s
-# 2 vcpu; 4Gb - Standard_F2
+# 2 vcpu; 4Gb - Standard_F2 - 83€/mes
 variable "az_vm_size" {
   default = "Standard_F2"
 }

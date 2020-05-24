@@ -28,9 +28,9 @@ Una charla en linea para el lunes 24 de mayo de 2020
 ---
 # ¿Qué necesitas?
 
-- Deberias de tener acceso a una linea de comandos desde la que instalar terraform y ansible 
+- Deberias de tener acceso a una linea de comandos desde la que instalar [terraform](https://www.terraform.io/downloads.html) y [ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
-- Cuenta en AWS y en Azure, para probar los ejemplos
+- Cuenta en [Hetzner Cloud](https://www.hetzner.de/cloud), [AWS](https://aws.amazon.com) y [Azure](https://portal.azure.com), para probar los ejemplos
 
 ---
 # ¿De qué hablaremos?
@@ -57,18 +57,16 @@ c) terraform y ansible
 
 "platform as a service"
 
-- heroku
-- pythonanywhere
-- openshift
+- [heroku](https://www.heroku.com/)
+- [pythonanywhere](https://www.pythonanywhere.com/)
+- [openshift](https://www.openshift.com/products/online/)
 ---
  FaaS
 
 "function as a service"
 
-- lambda
-- https://www.openfaas.com/
-- solo esta funcionando mientras se ejecuta, pago por tiempo
-- funciones y dependencias
+- [lambda](https://aws.amazon.com/lambda/)
+- [openfaas](https://www.openfaas.com/)
 ---
  SaaS
 
@@ -77,6 +75,7 @@ c) terraform y ansible
 - gmail
 - office 365
 - wordpress.org
+- ...
 
 ---
 ## b) uso y coste
@@ -85,16 +84,56 @@ c) terraform y ansible
 - el trafico entrante y el trafico saliente
 - servicios avanzados
 - "on premises" ?
-- hetzner ?
+- hetzner [cloud](https://www.hetzner.com/cloud)?
 - escala de negocio
 - lab infinito
 
+---
+### una comparativa de precios
+
+2 cpus, 4 RAM, 720horas (1 mes)
+
+- [hetzner cx21](https://www.hetzner.de/cloud) - 5,93€
+- [aws t3,medium](https://calculator.aws/#/createCalculator) 		- 33€
+- [azure Standard F2](https://azure.microsoft.com/en-us/pricing/calculator/)    - 83€
 ---
 ## c) terraform y ansible
 - demo time
 - [repo](https://github.com/goretoxo/charla_cloud)
 
 ---
+--- 
+## terraform
+
+abstraer la infraestructura, convertirla en codigo.
+
+- definicion
+- vagrant 
+- providers y provisioners
+
+---
+## providers [oficiales](https://www.terraform.io/docs/providers/index.html) 
+- [aws](https://www.terraform.io/docs/providers/aws/index.html)
+- [azure](https://www.terraform.io/docs/providers/azurerm/index.html)
+- [google cloud](https://www.terraform.io/docs/providers/google/index.html)
+- [openstack](https://www.terraform.io/docs/providers/openstack/index.html)
+- [1&1 cloud](https://www.terraform.io/docs/providers/oneandone/index.html)
+- [hetzner cloud](https://www.terraform.io/docs/providers/hcloud/index.html)
+- [ovh](https://www.terraform.io/docs/providers/ovh/index.html)
+- [cloudstack](https://www.terraform.io/docs/providers/cloudstack/index.html)
+- [vmware](https://www.terraform.io/docs/providers/vsphere/index.html)
+- [digitalocean](https://www.terraform.io/docs/providers/do/index.html)
+---
+## providers no oficiales 
+- [libvirt](https://github.com/dmacvicar/terraform-provider-libvirt/blob/master/README.md)
+- ...
+---
+## terraform y ansible
+- el [provisioner](https://github.com/radekg/terraform-provisioner-ansible/blob/master/README.md) no oficial
+- un [hack](https://tutorials.releaseworksacademy.com/learn/using-ansible-with-terraform) como local-exec
+- otro [hack](https://github.com/goretoxo/charla_cloud): producir un inventario
+---
+
 ## gracias por su atención
 
 

@@ -2,13 +2,13 @@
 
 if [ $# -eq 0 ]
   then
-    echo "crea.sh [aws|azure]"
+    echo "crea.sh [aws|azure|hetzner]"
     exit
 fi
 
 if [ "${1: -1}" == "/" ]
   then
-    echo "crea.sh [aws|azure]"
+    echo "crea.sh [aws|azure|hetzner]"
     exit
 fi
   
@@ -17,6 +17,12 @@ if [ "$1" == "azure" ]
   then
     source /home/pedro/trabajo/llaves/azure/credentials
 fi
+
+if [ "$1" == "hetzner" ]
+  then
+    source /home/pedro/trabajo/llaves/credentials_hetzner
+fi
+
 
 # el valor de la ip local, para autorizar desde los grupos de seguridad
 export TF_VAR_homeip="$(curl -s ifconfig.io)/32"

@@ -12,7 +12,7 @@ variable "aws_region" {
 
 # 1 vcpu; 0,5Gb - t2.nano
 # 2 vcpu; 05Gb  - t3.nano
-# 2 vcpu; 4Gb   - t3.medium
+# 2 vcpu; 4Gb   - t3.medium - 33€/mes
 variable "aws_instance_type" {
   default ="t3.medium"
 }
