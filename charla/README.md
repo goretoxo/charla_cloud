@@ -1,12 +1,17 @@
-TO-DO:
-x - git repo
-x - seguir con las pruebas
-## cloud facil pa ti
-
 # cloud es un ordenador de otra persona
 thereisnocloud.jpg
 
+- no es magia, 
+- no es la solucion a todos los problemas
+- no es gratis
+- no es irresponsable
 
+- elastico
+- agil
+- workflow global
+
+# que necesitas?
+- 
 
 # [M|I|P|F|S|...]aaS
  - un grafico con los niveles de abstraccion de cada letra, y ejemplos

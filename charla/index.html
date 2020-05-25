@@ -25,6 +25,8 @@
 Una charla en linea para el lunes 24 de mayo de 2020
 ---
 ![cloud](thereisnocloud.jpg)
+
+¿[qué es cloud](https://aws.amazon.com/what-is-cloud-computing/)?
 ---
 # ¿Qué necesitas?
 
@@ -37,7 +39,7 @@ Una charla en linea para el lunes 24 de mayo de 2020
 
 a) [M|I|P|F|S|...]aaS
 
-b) uso y coste
+b) la herramienta y la funcion
 
 c) manos a la obra
 
@@ -57,8 +59,10 @@ c) manos a la obra
 
 "platform as a service"
 
-- [heroku](https://www.heroku.com/)
 - [pythonanywhere](https://www.pythonanywhere.com/)
+- [heroku](https://www.heroku.com/)
+- [gke](https://cloud.google.com/kubernetes-engine/)
+- [eks](https://aws.amazon.com/eks/)
 - [openshift](https://www.openshift.com/products/online/)
 ---
  FaaS
@@ -67,6 +71,7 @@ c) manos a la obra
 
 - [lambda](https://aws.amazon.com/lambda/)
 - [openfaas](https://www.openfaas.com/)
+- [qinling](https://wiki.openstack.org/wiki/Faas)
 ---
  SaaS
 
@@ -78,41 +83,43 @@ c) manos a la obra
 - ...
 
 ---
-## b) uso y coste
-- horas, minutos, segundos
-- la calculadora de aws
-- el trafico entrante y el trafico saliente
-- servicios avanzados
+## b) la herramienta y la funcion
 - "on premises" ?
-- hetzner [cloud](https://www.hetzner.com/cloud)?
-- escala de negocio
-- lab infinito
+- servicios avanzados
+- escala de negocio / endless PoC 
+- la creacion de un nuevo usuario
 
 ---
-### una comparativa de precios
+### una "comparativa" de precios
 
 2 cpus, 4 RAM, 720horas (1 mes)
 
 - [hetzner cx21](https://www.hetzner.de/cloud) - 5,93€
 - [aws t3.medium](https://calculator.aws/#/createCalculator) 		- 33€
 - [azure Standard F2](https://azure.microsoft.com/en-us/pricing/calculator/)    - 83€
+
+
+- horas, minutos, segundos
+- la calculadora de aws/azure
+- el trafico entrante y el trafico saliente
+
 ---
 ## c) manos a la obra
 - IaC, infrastructure as code
 - [repo](https://github.com/goretoxo/charla_cloud)
 - el camino (personal) hasta aqui: 
-  - vagrant (+libvirt)
-  - ansible (+aws, +azure...)
-  - terraform+ansible... (+multicloud)
+  - [vagrant](https://www.vagrantup.com/docs/providers/) (+libvirt)
+  - [ansible](https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules.html) (+aws, +azure...)
+  - [terraform](https://www.terraform.io/)+ansible... (+multicloud)
 --- 
-## terraform
+### terraform
 
 - procedural/declarative
 - el fichero de estado (...)
 - providers y provisioners:
 
 ---
-## providers [oficiales](https://www.terraform.io/docs/providers/index.html) 
+### terraform: providers [oficiales](https://www.terraform.io/docs/providers/index.html) 
 - [aws](https://www.terraform.io/docs/providers/aws/index.html)
 - [azure](https://www.terraform.io/docs/providers/azurerm/index.html)
 - [google cloud](https://www.terraform.io/docs/providers/google/index.html)
@@ -124,16 +131,16 @@ c) manos a la obra
 - [vmware](https://www.terraform.io/docs/providers/vsphere/index.html)
 - [digitalocean](https://www.terraform.io/docs/providers/do/index.html)
 ---
-## providers no oficiales 
+### terraform: providers no oficiales 
 - [libvirt](https://github.com/dmacvicar/terraform-provider-libvirt/blob/master/README.md)
 - ...
 ---
-## terraform y ansible ...?
+### terraform y ansible ...?
 - un [provisioner](https://github.com/radekg/terraform-provisioner-ansible/blob/master/README.md) no oficial
 - un [hack](https://tutorials.releaseworksacademy.com/learn/using-ansible-with-terraform) con el provisioner local-exec
 - otro [hack](https://github.com/goretoxo/charla_cloud): producir un inventario...
 ---
-## desplegando con ansible
+### desplegando con ansible
 
 una visita guiada a los ficheros de configuracion de ansible para:
 
@@ -141,7 +148,7 @@ una visita guiada a los ficheros de configuracion de ansible para:
 - azure
 
 ---
-## desplegando con terraform
+### desplegando con terraform
 
 una visita guiada a los ficheros de configuracion de terraform para:
 
@@ -150,11 +157,11 @@ una visita guiada a los ficheros de configuracion de terraform para:
 - hetzner
 
 ---
-## ansible o terraform?
+### ansible o terraform?
 
 - [why we use terraform and not ansible](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
 ---
-## despliegue a tres bandas
+### despliegue a tres bandas
 
 ([workshop|taller|obradoiro] mode on)
 ---

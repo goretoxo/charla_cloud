@@ -12,7 +12,6 @@ if [ "${1: -1}" == "/" ]
     exit
 fi
   
-
 if [ "$1" == "azure" ]
   then
     source ~/trabajo/llaves/azure/credentials
@@ -23,14 +22,13 @@ if [ "$1" == "hetzner" ]
     source ~/trabajo/llaves/credentials_hetzner
 fi
 
-
 # el valor de la ip local, para autorizar desde los grupos de seguridad
 export TF_VAR_homeip="$(curl -s ifconfig.io)/32"
 
-# lanzamos el PLAN
+# lanzamos el terraform PLAN
 terraform plan -state=$1/estado.tfstate $1
 
-# lanzamos la creacion
+# lanzamos el terraform APPLY
 terraform apply -state=$1/estado.tfstate $1
 
 sleep 20
