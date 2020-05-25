@@ -39,7 +39,7 @@ a) [M|I|P|F|S|...]aaS
 
 b) uso y coste
 
-c) terraform y ansible
+c) manos a la obra
 
 
 ---
@@ -94,22 +94,22 @@ c) terraform y ansible
 2 cpus, 4 RAM, 720horas (1 mes)
 
 - [hetzner cx21](https://www.hetzner.de/cloud) - 5,93€
-- [aws t3,medium](https://calculator.aws/#/createCalculator) 		- 33€
+- [aws t3.medium](https://calculator.aws/#/createCalculator) 		- 33€
 - [azure Standard F2](https://azure.microsoft.com/en-us/pricing/calculator/)    - 83€
 ---
-## c) terraform y ansible
-- demo time
+## c) manos a la obra
+- IaC, infrastructure as code
 - [repo](https://github.com/goretoxo/charla_cloud)
-
----
+- el camino (personal) hasta aqui: 
+  - vagrant (+libvirt)
+  - ansible (+aws, +azure...)
+  - terraform+ansible... (+multicloud)
 --- 
 ## terraform
 
-abstraer la infraestructura, convertirla en codigo.
-
-- definicion
-- vagrant 
-- providers y provisioners
+- procedural/declarative
+- el fichero de estado (...)
+- providers y provisioners:
 
 ---
 ## providers [oficiales](https://www.terraform.io/docs/providers/index.html) 
@@ -128,11 +128,37 @@ abstraer la infraestructura, convertirla en codigo.
 - [libvirt](https://github.com/dmacvicar/terraform-provider-libvirt/blob/master/README.md)
 - ...
 ---
-## terraform y ansible
-- el [provisioner](https://github.com/radekg/terraform-provisioner-ansible/blob/master/README.md) no oficial
-- un [hack](https://tutorials.releaseworksacademy.com/learn/using-ansible-with-terraform) como local-exec
-- otro [hack](https://github.com/goretoxo/charla_cloud): producir un inventario
+## terraform y ansible ...?
+- un [provisioner](https://github.com/radekg/terraform-provisioner-ansible/blob/master/README.md) no oficial
+- un [hack](https://tutorials.releaseworksacademy.com/learn/using-ansible-with-terraform) con el provisioner local-exec
+- otro [hack](https://github.com/goretoxo/charla_cloud): producir un inventario...
 ---
+## desplegando con ansible
+
+una visita guiada a los ficheros de configuracion de ansible para:
+
+- aws
+- azure
+
+---
+## desplegando con terraform
+
+una visita guiada a los ficheros de configuracion de terraform para:
+
+- azure
+- aws 
+- hetzner
+
+---
+## ansible o terraform?
+
+- [why we use terraform and not ansible](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
+---
+## despliegue a tres bandas
+
+([workshop|taller|obradoiro] mode on)
+---
+
 
 ## gracias por su atención
 

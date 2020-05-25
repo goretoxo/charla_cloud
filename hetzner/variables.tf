@@ -1,7 +1,7 @@
 variable "hcloud_token" {}
 
 variable "numero_de_instancias" {
-  default = 3
+  default = 1
 }
 
 # tipos de maquinas
